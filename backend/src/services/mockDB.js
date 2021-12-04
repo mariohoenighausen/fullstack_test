@@ -10,5 +10,14 @@ const getTask = async function(id){
     catch(err){
         console.log(err);
     }
-}
-module.exports = tasks, getTask;
+};
+const deleteTask = async function(id){
+    try{
+        const res = await tasks.find((x)=> x.id == id);
+        return res;
+    }
+    catch(err){
+        console.log(err);
+    }
+};
+module.exports = tasks, getTask, deleteTask;
